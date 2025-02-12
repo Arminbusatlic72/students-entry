@@ -6,17 +6,23 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { provideState, provideStore } from '@ngrx/store';
 import { provideStoreDevtools } from '@ngrx/store-devtools';
 import { studentsReducer } from './state/students.reducer';
+import { provideEffects } from '@ngrx/effects';
+import { StudentsRecordsEffects } from './state/students-record.effect';
+import { provideHttpClient } from '@angular/common/http';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes),
+    provideHttpClient(),
     provideAnimationsAsync(),
+    provideEffects(StudentsRecordsEffects),
     provideStore(),
     provideState({
       name: 'studentsRecords',
       reducer: studentsReducer,
     }),
     provideStoreDevtools({ maxAge: 25, logOnly: false }),
+    provideEffects(),
   ],
 };

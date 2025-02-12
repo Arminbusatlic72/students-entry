@@ -9,7 +9,7 @@ import { MatTableModule } from '@angular/material/table';
 
 import { StudentsRecords } from '../../state/students-record';
 import { AppState, selectAll } from '../../state/students-selectors';
-
+import * as Actions from '../../state/students-record.action';
 @Component({
   selector: 'app-students-table',
   standalone: true,
@@ -37,6 +37,7 @@ export class StudentsTableComponent implements OnInit {
   ];
   constructor(private store: Store<AppState>) {
     this.dataSource$ = this.store.select(selectAll);
+    this.store.dispatch(Actions.callStudentsRecordsApi());
   }
   ngOnInit(): void {
     this.dataSource$.subscribe((res: any) => {

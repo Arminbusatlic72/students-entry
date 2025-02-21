@@ -25,9 +25,4 @@ export class StudentsRecordsEffects {
       )
     )
   );
-
-  // constructor(
-  //   // private actions$: Actions,
-  //   // private studentsRecordsService: StudentsRecordsService
-  // ) {}
 }

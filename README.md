@@ -1,6 +1,6 @@
 # StudentsEntry
 
-This is the learning project to learn NGRx: Actions, Effects, and Bringing Results to Your Angular Standalone Components
+This is the learning project to learn state management in Angular application using NGRx.
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.2.
 
